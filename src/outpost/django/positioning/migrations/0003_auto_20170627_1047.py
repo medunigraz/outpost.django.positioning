@@ -7,14 +7,14 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('positioning', '0002_beacon_name'),
-    ]
+    dependencies = [("positioning", "0002_beacon_name")]
 
     operations = [
         migrations.AlterField(
-            model_name='beacon',
-            name='charge',
-            field=models.DecimalField(decimal_places=2, default=0, max_digits=5, null=True),
-        ),
+            model_name="beacon",
+            name="charge",
+            field=models.DecimalField(
+                decimal_places=2, default=0, max_digits=5, null=True
+            ),
+        )
     ]

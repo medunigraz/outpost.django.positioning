@@ -7,15 +7,15 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('positioning', '0001_initial'),
-    ]
+    dependencies = [("positioning", "0001_initial")]
 
     operations = [
         migrations.AddField(
-            model_name='beacon',
-            name='name',
-            field=models.CharField(db_index=True, default='abcd', max_length=16, unique=True),
+            model_name="beacon",
+            name="name",
+            field=models.CharField(
+                db_index=True, default="abcd", max_length=16, unique=True
+            ),
             preserve_default=False,
-        ),
+        )
     ]

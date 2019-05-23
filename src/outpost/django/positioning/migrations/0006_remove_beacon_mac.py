@@ -7,13 +7,6 @@ from django.db import migrations
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('positioning', '0005_accesspoint_beacon'),
-    ]
+    dependencies = [("positioning", "0005_accesspoint_beacon")]
 
-    operations = [
-        migrations.RemoveField(
-            model_name='beacon',
-            name='mac',
-        ),
-    ]
+    operations = [migrations.RemoveField(model_name="beacon", name="mac")]

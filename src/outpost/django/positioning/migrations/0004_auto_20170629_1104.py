@@ -7,11 +7,9 @@ from django.db import migrations
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('positioning', '0003_auto_20170627_1047'),
-    ]
+    dependencies = [("positioning", "0003_auto_20170627_1047")]
 
     operations = [
-            migrations.DeleteModel('Beacon'),
-            migrations.DeleteModel('AccessPoint'),
+        migrations.DeleteModel("Beacon"),
+        migrations.DeleteModel("AccessPoint"),
     ]

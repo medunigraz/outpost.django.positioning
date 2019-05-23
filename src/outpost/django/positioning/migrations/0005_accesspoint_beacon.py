@@ -12,34 +12,65 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('geo', '0011_auto_20170619_1124'),
-        ('positioning', '0004_auto_20170629_1104'),
+        ("geo", "0011_auto_20170619_1124"),
+        ("positioning", "0004_auto_20170629_1104"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='AccessPoint',
+            name="AccessPoint",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('mac', models.CharField(db_index=True, max_length=17, unique=True)),
-                ('position', django.contrib.gis.db.models.fields.PointField(srid=3857)),
-                ('seen', models.DateTimeField(auto_now_add=True)),
-                ('active', models.BooleanField(default=False)),
-                ('level', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='geo.Level')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("mac", models.CharField(db_index=True, max_length=17, unique=True)),
+                ("position", django.contrib.gis.db.models.fields.PointField(srid=3857)),
+                ("seen", models.DateTimeField(auto_now_add=True)),
+                ("active", models.BooleanField(default=False)),
+                (
+                    "level",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE, to="geo.Level"
+                    ),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='Beacon',
+            name="Beacon",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('mac', models.CharField(db_index=True, max_length=17, unique=True)),
-                ('name', models.CharField(db_index=True, max_length=16, unique=True)),
-                ('position', django.contrib.gis.db.models.fields.PointField(srid=3857)),
-                ('deployed', models.DateTimeField(auto_now_add=True)),
-                ('seen', models.DateTimeField(auto_now_add=True)),
-                ('active', models.BooleanField(default=False)),
-                ('charge', models.DecimalField(decimal_places=2, default=0, max_digits=5, null=True)),
-                ('level', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='geo.Level')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("mac", models.CharField(db_index=True, max_length=17, unique=True)),
+                ("name", models.CharField(db_index=True, max_length=16, unique=True)),
+                ("position", django.contrib.gis.db.models.fields.PointField(srid=3857)),
+                ("deployed", models.DateTimeField(auto_now_add=True)),
+                ("seen", models.DateTimeField(auto_now_add=True)),
+                ("active", models.BooleanField(default=False)),
+                (
+                    "charge",
+                    models.DecimalField(
+                        decimal_places=2, default=0, max_digits=5, null=True
+                    ),
+                ),
+                (
+                    "level",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE, to="geo.Level"
+                    ),
+                ),
             ],
         ),
     ]
