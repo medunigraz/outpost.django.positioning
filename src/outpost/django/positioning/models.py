@@ -8,7 +8,7 @@ logger = logging.getLogger(__name__)
 
 class Beacon(models.Model):
     name = models.CharField(max_length=16, db_index=True, unique=True)
-    level = models.ForeignKey("geo.Level")
+    level = models.ForeignKey("geo.Level", on_delete=models.CASCADE)
     position = models.PointField(srid=settings.DEFAULT_SRID)
     deployed = models.DateTimeField(auto_now_add=True)
     seen = models.DateTimeField(auto_now_add=True)
@@ -21,7 +21,7 @@ class Beacon(models.Model):
 
 class AccessPoint(models.Model):
     mac = models.CharField(max_length=17, db_index=True, unique=True)
-    level = models.ForeignKey("geo.Level")
+    level = models.ForeignKey("geo.Level", on_delete=models.CASCADE)
     position = models.PointField(srid=settings.DEFAULT_SRID)
     seen = models.DateTimeField(auto_now_add=True)
     active = models.BooleanField(default=False)
