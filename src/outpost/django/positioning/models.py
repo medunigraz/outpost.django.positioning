@@ -7,7 +7,7 @@ logger = logging.getLogger(__name__)
 
 
 class Beacon(models.Model):
-    name = models.CharField(max_length=16, db_index=True, unique=True)
+    name = models.CharField(max_length=32, db_index=True, unique=True)
     level = models.ForeignKey("geo.Level", on_delete=models.CASCADE)
     position = models.PointField(srid=settings.DEFAULT_SRID)
     deployed = models.DateTimeField(auto_now_add=True)
