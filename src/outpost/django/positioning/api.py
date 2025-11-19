@@ -23,8 +23,7 @@ from . import models, serializers
 
 
 class BeaconViewSet(GeoModelViewSet):
-    """
-    """
+    """ """
 
     queryset = models.Beacon.objects.filter(active=True)
     serializer_class = serializers.BeaconSerializer
