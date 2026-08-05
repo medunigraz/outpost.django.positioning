@@ -30,7 +30,7 @@ class BeaconViewSet(GeoModelViewSet):
     permission_classes = (IsAuthenticatedOrTokenHasScope, DjangoModelPermissions)
     required_scopes = ("editor",)
     pagination_class = None
-    filter_fields = ("level",)
+    filterset_fields = ("level",)
 
 
 class LocateView(viewsets.ViewSet):
